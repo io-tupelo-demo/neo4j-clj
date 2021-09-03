@@ -28,7 +28,12 @@
          return name, version, edition ;"))))
 
 (dotest
-  (let [; a neo4j connection map with the driver under `:db`
+  (let [; a neo4j connection map with the driver under `:db`.  Sample:
+        ;     {:url        #object[java.net.URI 0x1d4d84fb "neo4j+s://4ca9bb9b.databases.neo4j.io"],
+        ;      :user       "neo4j",
+        ;      :password   "g6o2KIftFE6EIYMUCIY9a6DW0oVcwihh7m0Z5DP-jcY",
+        ;      :driver     #object[org.neo4j.driver.internal.InternalDriver 0x59e97f75 "org.neo4j.driver.internal.InternalDriver@59e97f75"],
+        ;      :destroy-fn #object[neo4j_clj.core$connect$fn__19085 0x1d696b35 "neo4j_clj.core$connect$fn__19085@1d696b35"]}
         conn-map (neolib/connect (URI. "bolt://localhost:7687") ; uri
                    "neo4j" "secret") ; user/pass
         ]
